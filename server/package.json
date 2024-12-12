@@ -1,0 +1,27 @@
+{
+  "name": "http-backend-node",
+  "version": "1.0.0",
+  "description": "Generic http backed written in Node.js",
+  "dependencies": {
+    "cookie-parser": "^1.4.7",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "rimraf": "4.1.2",
+    "typescript": "^4.9.4"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "start": "node dist/index.js",
+    "build": "npm run clean && tsc && cp -r public dist",
+    "test": "jest"
+  },
+  "author": "Mattia Bonardi",
+  "license": "MIT",
+  "jest": {
+    "preset": "ts-jest/presets/default-esm",
+    "moduleNameMapper": {
+      "^(\\.{1,2}/.*)\\.js$": "$1"
+    }
+  }
+}
